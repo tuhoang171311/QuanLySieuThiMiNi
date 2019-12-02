@@ -16,6 +16,7 @@ namespace DoAnSieuThiMinik
         SIEUTHI_DAL sieuthi = new SIEUTHI_DAL();
         ADO ado = new ADO();
         String _TenDangNhap;
+        HANGHOA_DAL hh = new HANGHOA_DAL();
         
         
         public Form1(String txtUsername)
@@ -109,7 +110,16 @@ namespace DoAnSieuThiMinik
             cbMaHD2.DataSource = sieuthi.getMaHD();
           //  datagridviewCTHD.DataSource = sieuthi.GETCTHData();
           //  datagridviewCTHD.DataSource = sieuthi.getDataCTHD2();
-            datagridviewCTHD.DataSource = ado.getChiTietHoaDonData();
+           datagridviewCTHD.DataSource = ado.getChiTietHoaDonData();
+           dataGridViewDanhSachSP.DataSource = hh.getAllDataHangHoa();
+           cbMaLoai.DataSource = hh.getCBLoaiHang();
+           cbMaLoai.DisplayMember = "TenLoai";
+           cbMaLoai.ValueMember = "MaLoai";
+           cbMaNSX.DataSource = hh.getCBNhaSX();
+           cbMaNSX.DisplayMember = "TenNSX";
+           cbMaNSX.ValueMember = "MaNSX";
+
+           ThemDuLieuDVT();
             
         }
 
@@ -319,6 +329,101 @@ namespace DoAnSieuThiMinik
         }
 
         private void SF002_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtMaHang.Text) || String.IsNullOrEmpty(txtTenHang.Text))
+            {
+                MessageBox.Show("Vui  lòng điền đủ thông tin!!");
+            }
+            else
+            {
+                if (hh.ThemHangHoa(txtMaHang.Text, cbDVT.Text, txtTenHang.Text, cbMaLoai.SelectedValue.ToString(), cbMaNSX.SelectedValue.ToString()) == 1)
+                {
+                    MessageBox.Show("Thêm thành công!!");
+                    dataGridViewDanhSachSP.DataSource = hh.getAllDataHangHoa();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm thất bại,vui lòng kiểm tra lại thông tin!!");
+                }
+            }
+        }
+
+        private void dataGridViewDanhSachSP_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtMaHang.Text = dataGridViewDanhSachSP.CurrentRow.Cells[0].Value.ToString();
+            txtTenHang.Text = dataGridViewDanhSachSP.CurrentRow.Cells[1].Value.ToString();
+        }
+
+        public void ThemDuLieuDVT()
+        {
+            cbDVT.Items.Add("Lon");
+            cbDVT.Items.Add("Bịch");
+            cbDVT.Items.Add("Chai");
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            string ma;
+            try
+            {
+                ma = dataGridViewDanhSachSP.CurrentRow.Cells[0].Value.ToString();
+                if (hh.XoaHangHoa(ma) == 1)
+                {
+                    MessageBox.Show("Xóa thành công!!");
+                    dataGridViewDanhSachSP.DataSource = hh.getAllDataHangHoa();
+                }
+                else
+                {
+                    MessageBox.Show("Xóa thất bại!!");
+                }
+            }
+            catch
+            {
+                return;
+            }
+        }
+
+        private void cbDVT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTenHang_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbMaNSX_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SF003_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }

@@ -49,6 +49,10 @@ namespace DoAnSieuThiMinik
             if (String.IsNullOrEmpty(txtMaHang.Text) || String.IsNullOrEmpty(txtTenHang.Text))
             {
                 MessageBox.Show("Vui  lòng điền đủ thông tin!!");
+                if (hanghoa.KiemTraKhoaChinhMaHg(txtMaHang.Text) == 0) {
+                    MessageBox.Show("Trùng khóa chính, Vui lòng nhập lại!!");
+                    return;
+                }
             }
             else {
                 if (hanghoa.ThemHangHoa(txtMaHang.Text, cbDVT.Text, txtTenHang.Text, cbMaLoai.SelectedValue.ToString(), cbMaNSX.SelectedValue.ToString()) == 1) {

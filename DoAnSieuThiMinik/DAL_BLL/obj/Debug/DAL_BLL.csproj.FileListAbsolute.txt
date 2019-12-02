@@ -4,3 +4,8 @@ H:\DoAnWinForm\DoAnSieuThiMinik\DAL_BLL\obj\Debug\DAL_BLL.dll
 H:\DoAnWinForm\DoAnSieuThiMinik\DAL_BLL\obj\Debug\DAL_BLL.pdb
 H:\DoAnWinForm\DoAnSieuThiMinik\DAL_BLL\bin\Debug\DAL_BLL.dll.config
 H:\DoAnWinForm\DoAnSieuThiMinik\DAL_BLL\obj\Debug\DAL_BLL.csprojResolveAssemblyReference.cache
+D:\DoAnWinForm\QuanLySieuThiMiNi\DoAnSieuThiMinik\DAL_BLL\bin\Debug\DAL_BLL.dll.config
+D:\DoAnWinForm\QuanLySieuThiMiNi\DoAnSieuThiMinik\DAL_BLL\bin\Debug\DAL_BLL.dll
+D:\DoAnWinForm\QuanLySieuThiMiNi\DoAnSieuThiMinik\DAL_BLL\bin\Debug\DAL_BLL.pdb
+D:\DoAnWinForm\QuanLySieuThiMiNi\DoAnSieuThiMinik\DAL_BLL\obj\Debug\DAL_BLL.dll
+D:\DoAnWinForm\QuanLySieuThiMiNi\DoAnSieuThiMinik\DAL_BLL\obj\Debug\DAL_BLL.pdb

@@ -29,7 +29,7 @@ namespace DAL_BLL
 
         public DataTable getChiTietHoaDonData(){
             ta = new DataTable();
-            string query = "select TenHG,GiaBan,SoLuong,SoLuong*GiaBan as thanhtien from HOADON,CHITIETHD,HANGHOA where HOADON.MaHD=CHITIETHD.MaHD and HANGHOA.MaHG=CHITIETHD.MaHg";
+            string query = "select CHITIETHD.MaHD,CHITIETHD.MaHg,TenHG,GiaBan,SoLuong,SoLuong*GiaBan as thanhtien from HOADON,CHITIETHD,HANGHOA where HOADON.MaHD=CHITIETHD.MaHD and HANGHOA.MaHG=CHITIETHD.MaHg";
             adap = new SqlDataAdapter(query,conn);
             adap.Fill(ta);
             return ta;

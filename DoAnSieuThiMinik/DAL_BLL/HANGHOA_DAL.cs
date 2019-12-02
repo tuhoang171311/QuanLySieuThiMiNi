@@ -38,14 +38,12 @@ namespace DAL_BLL
         }
         public int KiemTraKhoaChinhMaHg(string ma) {
             HANGHOA hh = qlst.HANGHOAs.Where(t => t.MaHG == ma).FirstOrDefault();
-            if (hh != null) {
-                return 0;
+            if (hh == null) {
+                return 1;
             }
-            return 1;
+            return 0;
         }
         public int XoaHangHoa(string ma) {
-            if (KiemTraKhoaChinhMaHg(ma)==1)
-            {
                 try
                 {
                     HANGHOA hh = qlst.HANGHOAs.Where(t => t.MaHG == ma).FirstOrDefault();
@@ -58,7 +56,5 @@ namespace DAL_BLL
                     return 0;
                 }
             }
-            return 0;
         }
     }
-}
