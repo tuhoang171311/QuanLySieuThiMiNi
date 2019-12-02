@@ -1,0 +1,6 @@
+H:\DoAnWinForm\DoAnSieuThiMinik\DAL_BLL\bin\Debug\DAL_BLL.dll
+H:\DoAnWinForm\DoAnSieuThiMinik\DAL_BLL\bin\Debug\DAL_BLL.pdb
+H:\DoAnWinForm\DoAnSieuThiMinik\DAL_BLL\obj\Debug\DAL_BLL.dll
+H:\DoAnWinForm\DoAnSieuThiMinik\DAL_BLL\obj\Debug\DAL_BLL.pdb
+H:\DoAnWinForm\DoAnSieuThiMinik\DAL_BLL\bin\Debug\DAL_BLL.dll.config
+H:\DoAnWinForm\DoAnSieuThiMinik\DAL_BLL\obj\Debug\DAL_BLL.csprojResolveAssemblyReference.cache

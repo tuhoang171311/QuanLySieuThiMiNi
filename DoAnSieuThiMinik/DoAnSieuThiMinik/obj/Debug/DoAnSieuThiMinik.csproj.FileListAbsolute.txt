@@ -1,0 +1,15 @@
+H:\DoAnWinForm\DoAnSieuThiMinik\DoAnSieuThiMinik\bin\Debug\DoAnSieuThiMinik.exe.config
+H:\DoAnWinForm\DoAnSieuThiMinik\DoAnSieuThiMinik\obj\Debug\DoAnSieuThiMinik.Form1.resources
+H:\DoAnWinForm\DoAnSieuThiMinik\DoAnSieuThiMinik\obj\Debug\DoAnSieuThiMinik.frmCauHinh.resources
+H:\DoAnWinForm\DoAnSieuThiMinik\DoAnSieuThiMinik\obj\Debug\DoAnSieuThiMinik.frmLogin.resources
+H:\DoAnWinForm\DoAnSieuThiMinik\DoAnSieuThiMinik\obj\Debug\DoAnSieuThiMinik.Properties.Resources.resources
+H:\DoAnWinForm\DoAnSieuThiMinik\DoAnSieuThiMinik\obj\Debug\DoAnSieuThiMinik.csproj.GenerateResource.Cache
+H:\DoAnWinForm\DoAnSieuThiMinik\DoAnSieuThiMinik\obj\Debug\DoAnSieuThiMinik.exe.licenses
+H:\DoAnWinForm\DoAnSieuThiMinik\DoAnSieuThiMinik\bin\Debug\DoAnSieuThiMinik.exe
+H:\DoAnWinForm\DoAnSieuThiMinik\DoAnSieuThiMinik\bin\Debug\DoAnSieuThiMinik.pdb
+H:\DoAnWinForm\DoAnSieuThiMinik\DoAnSieuThiMinik\obj\Debug\DoAnSieuThiMinik.exe
+H:\DoAnWinForm\DoAnSieuThiMinik\DoAnSieuThiMinik\obj\Debug\DoAnSieuThiMinik.pdb
+H:\DoAnWinForm\DoAnSieuThiMinik\DoAnSieuThiMinik\bin\Debug\DAL_BLL.pdb
+H:\DoAnWinForm\DoAnSieuThiMinik\DoAnSieuThiMinik\obj\Debug\DoAnSieuThiMinik.frmDanhSachSanPham.resources
+H:\DoAnWinForm\DoAnSieuThiMinik\DoAnSieuThiMinik\bin\Debug\DAL_BLL.dll
+H:\DoAnWinForm\DoAnSieuThiMinik\DoAnSieuThiMinik\obj\Debug\DoAnSieuThiMinik.csprojResolveAssemblyReference.cache
