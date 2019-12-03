@@ -43,6 +43,9 @@ namespace DAL_BLL
             }
             return 0;
         }
+        public HANGHOA GetOneHangHoa(string ma) {
+            return qlst.HANGHOAs.Where(t => t.MaHG == ma).FirstOrDefault();
+        }
         public int XoaHangHoa(string ma) {
                 try
                 {

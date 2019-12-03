@@ -64,5 +64,12 @@ namespace DoAnSieuThiMinik
                 }
             }
         }
+
+        private void dataGridViewDanhSachHangHoa_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Form1 frm = new Form1();
+            frm.sender(dataGridViewDanhSachHangHoa.CurrentRow.Cells[0].Value.ToString());
+            //frm.Show();
+        }
     }
 }

@@ -52,6 +52,7 @@
             this.cbMaNSX = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTenHang = new System.Windows.Forms.TextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDanhSachHangHoa)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +73,7 @@
             this.dataGridViewDanhSachHangHoa.RowTemplate.Height = 28;
             this.dataGridViewDanhSachHangHoa.Size = new System.Drawing.Size(993, 356);
             this.dataGridViewDanhSachHangHoa.TabIndex = 0;
+            this.dataGridViewDanhSachHangHoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDanhSachHangHoa_CellClick);
             // 
             // mahg
             // 
@@ -300,5 +302,6 @@
         private System.Windows.Forms.ComboBox cbMaNSX;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTenHang;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

@@ -17,9 +17,27 @@ namespace DoAnSieuThiMinik
         ADO ado = new ADO();
         String _TenDangNhap;
         HANGHOA_DAL hh = new HANGHOA_DAL();
+        HANGHOA m;
         KHACHHANG_DAL kh = new KHACHHANG_DAL();
-        
-        
+        public delegate void sendData(string ma);
+        public sendData sender;
+        List<HANGHOA> listHang=new List<HANGHOA>();
+        DataTable ta = new DataTable();
+        public void xuly(HANGHOA n) {
+            listHang.Add(n);
+            dataGridViewBanHangg.DataSource = listHang;
+            MessageBox.Show(dataGridViewBanHangg.Columns.Count +"");
+        }
+        private void GetMessage(string Message)
+        {
+            m = hh.GetOneHangHoa(Message);
+            xuly(m);
+             //dataGridViewBanHangg.DataSource = hh.getAllDataHangHoa();
+        }
+        public Form1() {
+            InitializeComponent();
+            sender = new sendData(GetMessage);
+        }
         public Form1(String txtUsername)
         {
             InitializeComponent();
@@ -122,9 +140,8 @@ namespace DoAnSieuThiMinik
            cbMaKhachHang.DataSource = kh.getAllDataKhachHang();
            cbMaKhachHang.DisplayMember = "HoTen";
            cbMaKhachHang.ValueMember = "MaKH";
-
+          // dataGridViewBanHangg.DataSource = listHang;
            ThemDuLieuDVT();
-            
         }
 
         private void FindMenuPhanQuyen(ToolStripItemCollection mnuItems, string pScreenName, bool pEnable)
