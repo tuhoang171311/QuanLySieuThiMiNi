@@ -74,6 +74,8 @@
             this.dataGridViewDanhSachHangHoa.Size = new System.Drawing.Size(993, 356);
             this.dataGridViewDanhSachHangHoa.TabIndex = 0;
             this.dataGridViewDanhSachHangHoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDanhSachHangHoa_CellClick);
+            this.dataGridViewDanhSachHangHoa.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDanhSachHangHoa_CellDoubleClick);
+            this.dataGridViewDanhSachHangHoa.DoubleClick += new System.EventHandler(this.dataGridViewDanhSachHangHoa_DoubleClick);
             // 
             // mahg
             // 

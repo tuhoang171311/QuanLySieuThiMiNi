@@ -45,6 +45,7 @@
     <Compile Include="CHITIETHOADON2.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="HANGHOA_DAL.cs" />
+    <Compile Include="HOADON_DAL.cs" />
     <Compile Include="KHACHHANG_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

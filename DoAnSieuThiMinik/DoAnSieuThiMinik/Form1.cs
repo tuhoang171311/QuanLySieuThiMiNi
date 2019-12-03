@@ -15,26 +15,45 @@ namespace DoAnSieuThiMinik
     {
         SIEUTHI_DAL sieuthi = new SIEUTHI_DAL();
         ADO ado = new ADO();
+        HOADON_DAL hd = new HOADON_DAL();
         String _TenDangNhap;
         HANGHOA_DAL hh = new HANGHOA_DAL();
         HANGHOA m;
         KHACHHANG_DAL kh = new KHACHHANG_DAL();
         public delegate void sendData(string ma);
         public sendData sender;
-        List<HANGHOA> listHang=new List<HANGHOA>();
+        List<HANGHOA> listHang = new List<HANGHOA>();
         DataTable ta = new DataTable();
-        public void xuly(HANGHOA n) {
-            listHang.Add(n);
-            dataGridViewBanHangg.DataSource = listHang;
-            MessageBox.Show(dataGridViewBanHangg.Columns.Count +"");
+        string ma, ten;
+
+        public string Ma
+        {
+            get { return ma; }
+            set { ma = value; }
+        }
+
+        public string Ten
+        {
+            get { return ten; }
+            set { ten = value; }
+        }
+        public void xuly()
+        {
+            string[] row = new string[] { this.Ma, this.Ten };
+            // listHang.Add(n);
+            //dataGridViewBanHangg.DataSource = listHang;
+            dataGridViewBanHangg.Rows.Add(row);
+            //MessageBox.Show(dataGridViewBanHangg.Rows.Count +"");
         }
         private void GetMessage(string Message)
         {
             m = hh.GetOneHangHoa(Message);
-            xuly(m);
-             //dataGridViewBanHangg.DataSource = hh.getAllDataHangHoa();
+            MessageBox.Show(Message);
+            //xuly(m);
+            //dataGridViewBanHangg.DataSource = hh.getAllDataHangHoa();
         }
-        public Form1() {
+        public Form1()
+        {
             InitializeComponent();
             sender = new sendData(GetMessage);
         }
@@ -91,12 +110,12 @@ namespace DoAnSieuThiMinik
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            foreach (var item in navigationPane1.Pages)              
-                    item.PageVisible = false;
+            foreach (var item in navigationPane1.Pages)
+                item.PageVisible = false;
 
 
             // TODO: This line of code loads data into the 'dataSet_QLSieuThiMini.QL_PhanQuyen' table. You can move, or remove it, as needed.
-           
+
             // TODO: This line of code loads data into the 'dataSet_QLSieuThiMini.QL_NhomNguoiDung' table. You can move, or remove it, as needed.
             this.qL_NhomNguoiDungTableAdapter.Fill(this.dataSet_QLSieuThiMini.QL_NhomNguoiDung);
             // TODO: This line of code loads data into the 'dataSet_QLSieuThiMini.QL_NguoiDung' table. You can move, or remove it, as needed.
@@ -105,7 +124,7 @@ namespace DoAnSieuThiMinik
 
             String nhomND = (String)qL_NguoiDungNhomNguoiDungDKTableAdapter.GetMaNhomNguoiDung(_TenDangNhap);
             this.qL_GetPhanQuyenTableAdapter.Fill(this.dataSet_QLSieuThiMini.QL_GetPhanQuyen, nhomND);
-            
+
             int n = qL_GetPhanQuyenDataGridView.RowCount;
             List<String> dsMaManHinh = new List<string>();
             for (int i = 0; i < n; i++)
@@ -119,49 +138,51 @@ namespace DoAnSieuThiMinik
                 catch { }
             }
 
-            for (int j=0;j<dsMaManHinh.Count;j++)
+            for (int j = 0; j < dsMaManHinh.Count; j++)
             {
                 foreach (var item in navigationPane1.Pages)
                     if (item.Name == dsMaManHinh[j])
                         item.PageVisible = true;
 
             }
-           // cbMaHD2.DataSource = sieuthi.getMaHD();
-          //  datagridviewCTHD.DataSource = sieuthi.GETCTHData();
-          //  datagridviewCTHD.DataSource = sieuthi.getDataCTHD2();
-          // datagridviewCTHD.DataSource = ado.getChiTietHoaDonData();
-           dataGridViewDanhSachSP.DataSource = hh.getAllDataHangHoa();
-           cbMaLoai.DataSource = hh.getCBLoaiHang();
-           cbMaLoai.DisplayMember = "TenLoai";
-           cbMaLoai.ValueMember = "MaLoai";
-           cbMaNSX.DataSource = hh.getCBNhaSX();
-           cbMaNSX.DisplayMember = "TenNSX";
-           cbMaNSX.ValueMember = "MaNSX";
-           cbMaKhachHang.DataSource = kh.getAllDataKhachHang();
-           cbMaKhachHang.DisplayMember = "HoTen";
-           cbMaKhachHang.ValueMember = "MaKH";
-          // dataGridViewBanHangg.DataSource = listHang;
-           ThemDuLieuDVT();
+            // cbMaHD2.DataSource = sieuthi.getMaHD();
+            //  datagridviewCTHD.DataSource = sieuthi.GETCTHData();
+            //  datagridviewCTHD.DataSource = sieuthi.getDataCTHD2();
+            // datagridviewCTHD.DataSource = ado.getChiTietHoaDonData();
+            dataGridViewDanhSachSP.DataSource = hh.getAllDataHangHoa();
+            cbMaLoai.DataSource = hh.getCBLoaiHang();
+            cbMaLoai.DisplayMember = "TenLoai";
+            cbMaLoai.ValueMember = "MaLoai";
+            cbMaNSX.DataSource = hh.getCBNhaSX();
+            cbMaNSX.DisplayMember = "TenNSX";
+            cbMaNSX.ValueMember = "MaNSX";
+            cbMaKhachHang.DataSource = kh.getAllDataKhachHang();
+            cbMaKhachHang.DisplayMember = "HoTen";
+            cbMaKhachHang.ValueMember = "MaKH";
+            dataGridViewHoaDon.DataSource = hd.getAllDataHoaDon();
+            dataGridViewCTHD.DataSource = hd.getAllDataCTHD();
+            // dataGridViewBanHangg.DataSource = listHang;
+            ThemDuLieuDVT();
         }
 
         private void FindMenuPhanQuyen(ToolStripItemCollection mnuItems, string pScreenName, bool pEnable)
         {
             foreach (ToolStripItem menu in mnuItems)
             {
-            if (menu is ToolStripMenuItem &&
-            ((ToolStripMenuItem)(menu)).DropDownItems.Count > 0)
-            {
-            FindMenuPhanQuyen(((ToolStripMenuItem)(menu)).DropDownItems,
-            pScreenName, pEnable);
-            menu.Enabled =
-            CheckAllMenuChildVisible(((ToolStripMenuItem)(menu)).DropDownItems);
-            menu.Visible = menu.Enabled;
-            }
-            else if (string.Equals(pScreenName, menu.Tag))
-            {
-            menu.Enabled = pEnable;
-            menu.Visible = pEnable;
-            }
+                if (menu is ToolStripMenuItem &&
+                ((ToolStripMenuItem)(menu)).DropDownItems.Count > 0)
+                {
+                    FindMenuPhanQuyen(((ToolStripMenuItem)(menu)).DropDownItems,
+                    pScreenName, pEnable);
+                    menu.Enabled =
+                    CheckAllMenuChildVisible(((ToolStripMenuItem)(menu)).DropDownItems);
+                    menu.Visible = menu.Enabled;
+                }
+                else if (string.Equals(pScreenName, menu.Tag))
+                {
+                    menu.Enabled = pEnable;
+                    menu.Visible = pEnable;
+                }
             }
         }
 
@@ -170,14 +191,14 @@ namespace DoAnSieuThiMinik
         {
             foreach (ToolStripItem menuItem in mnuItems)
             {
-            if (menuItem is ToolStripMenuItem && menuItem.Enabled)
-            {
-            return true;
-            }
-            else if (menuItem is ToolStripSeparator)
-            {
-            continue;
-            }
+                if (menuItem is ToolStripMenuItem && menuItem.Enabled)
+                {
+                    return true;
+                }
+                else if (menuItem is ToolStripSeparator)
+                {
+                    continue;
+                }
             }
             return false;
         }
@@ -244,7 +265,7 @@ namespace DoAnSieuThiMinik
 
         private void fill_DKToolStripButton_Click(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -256,24 +277,24 @@ namespace DoAnSieuThiMinik
 
         public void LoadComboByCondition()
         {
-        if (qL_NhomNguoiDungComboBox.SelectedValue != null)
-            this.qL_NguoiDungNhomNguoiDungDKTableAdapter.Fill_DK(this.dataSet_QLSieuThiMini.QL_NguoiDungNhomNguoiDungDK, qL_NhomNguoiDungComboBox.SelectedValue.ToString());
+            if (qL_NhomNguoiDungComboBox.SelectedValue != null)
+                this.qL_NguoiDungNhomNguoiDungDKTableAdapter.Fill_DK(this.dataSet_QLSieuThiMini.QL_NguoiDungNhomNguoiDungDK, qL_NhomNguoiDungComboBox.SelectedValue.ToString());
 
-        this.qL_GetPhanQuyenTableAdapter.Fill(this.dataSet_QLSieuThiMini.QL_GetPhanQuyen, qL_NhomNguoiDungComboBox.SelectedValue.ToString());
+            this.qL_GetPhanQuyenTableAdapter.Fill(this.dataSet_QLSieuThiMini.QL_GetPhanQuyen, qL_NhomNguoiDungComboBox.SelectedValue.ToString());
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            foreach(DataGridViewRow item in qL_NguoiDungDataGridView.SelectedRows)
+            foreach (DataGridViewRow item in qL_NguoiDungDataGridView.SelectedRows)
             {
-            // Nhớ kiểm tra trước khi thêm trùng khóa chính
-                if(this.qL_NguoiDungNhomNguoiDungDKTableAdapter.KiemTraKhoa(item.Cells[0].Value.ToString(), qL_NhomNguoiDungComboBox.SelectedValue.ToString()) > 0)
+                // Nhớ kiểm tra trước khi thêm trùng khóa chính
+                if (this.qL_NguoiDungNhomNguoiDungDKTableAdapter.KiemTraKhoa(item.Cells[0].Value.ToString(), qL_NhomNguoiDungComboBox.SelectedValue.ToString()) > 0)
                 {
-                MessageBox.Show("Đã tồn tại");
+                    MessageBox.Show("Đã tồn tại");
                 }
                 else
                 {
-                this.qL_NguoiDungNhomNguoiDungDKTableAdapter.Insert1(item.Cells[0].Value.ToString(), qL_NhomNguoiDungComboBox.SelectedValue.ToString());
+                    this.qL_NguoiDungNhomNguoiDungDKTableAdapter.Insert1(item.Cells[0].Value.ToString(), qL_NhomNguoiDungComboBox.SelectedValue.ToString());
                 }
             }
             LoadComboByCondition();
@@ -283,22 +304,22 @@ namespace DoAnSieuThiMinik
         {
             foreach (DataGridViewRow item in qL_NguoiDungNhomNguoiDungDKDataGridView.SelectedRows)
             {
-            if
-            (this.qL_NguoiDungNhomNguoiDungDKTableAdapter.Delete1(item.Cells[0].Value.ToString(), qL_NhomNguoiDungComboBox.SelectedValue.ToString()) == 1)
-            {
-            MessageBox.Show("Thành công");
-            }
-            else
-            {
-            MessageBox.Show("Thất bại");
-            }
-            LoadComboByCondition();
+                if
+                (this.qL_NguoiDungNhomNguoiDungDKTableAdapter.Delete1(item.Cells[0].Value.ToString(), qL_NhomNguoiDungComboBox.SelectedValue.ToString()) == 1)
+                {
+                    MessageBox.Show("Thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Thất bại");
+                }
+                LoadComboByCondition();
             }
         }
 
         private void fillToolStripButton_Click(object sender, EventArgs e)
         {
-           
+
 
         }
 
@@ -334,7 +355,7 @@ namespace DoAnSieuThiMinik
                 }
                 catch { }
             }
-            
+
         }
 
         private void btnHienThiDanhSachSanPham_Click(object sender, EventArgs e)
@@ -346,14 +367,19 @@ namespace DoAnSieuThiMinik
         private void btnHienThiDanhSachSanPham_Click_1(object sender, EventArgs e)
         {
             frmDanhSachSanPham dssp = new frmDanhSachSanPham();
-            dssp.Show();
+            dssp.ShowDialog();//De text cái
+            //Lay du lieu
+            this.Ma = dssp.Ma;
+            this.Ten = dssp.Ten;
+            string[] temp = new string[] { Ma, Ten };
+            dataGridViewBanHangg.Rows.Add(temp);
         }
 
         private void SF002_Paint(object sender, PaintEventArgs e)
         {
 
         }
-        
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtMaHang.Text) || String.IsNullOrEmpty(txtTenHang.Text))
@@ -453,6 +479,29 @@ namespace DoAnSieuThiMinik
         {
             frmKhachHang th = new frmKhachHang();
             th.ShowDialog();
+        }
+
+        private void dataGridViewHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string ma = dataGridViewHoaDon.CurrentRow.Cells[0].Value.ToString();
+                dataGridViewCTHD.DataSource = hd.getDataCTHDTheoMa(ma);
+            }
+            catch (Exception ex)
+            {
+                // MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dataGridViewCTHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

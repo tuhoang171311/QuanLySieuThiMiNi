@@ -15,6 +15,19 @@ namespace DoAnSieuThiMinik
     public partial class frmDanhSachSanPham : Form
     {
         HANGHOA_DAL hanghoa = new HANGHOA_DAL();
+        string ma, ten;
+
+        public string Ten
+        {
+            get { return ten; }
+            set { ten = value; }
+        }
+
+        public string Ma
+        {
+            get { return ma; }
+            set { ma = value; }
+        }
         ADO ado = new ADO();
         public frmDanhSachSanPham()
         {
@@ -67,9 +80,24 @@ namespace DoAnSieuThiMinik
 
         private void dataGridViewDanhSachHangHoa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+            //frm.Show();
+        }
+
+        private void dataGridViewDanhSachHangHoa_DoubleClick(object sender, EventArgs e)
+        {
             Form1 frm = new Form1();
             frm.sender(dataGridViewDanhSachHangHoa.CurrentRow.Cells[0].Value.ToString());
-            //frm.Show();
+        }
+
+        private void dataGridViewDanhSachHangHoa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridViewDanhSachHangHoa.CurrentRow != null)
+            {
+                this.Ma = dataGridViewDanhSachHangHoa.CurrentRow.Cells[0].Value.ToString();
+                this.Ten = dataGridViewDanhSachHangHoa.CurrentRow.Cells[2].Value.ToString();
+                this.Close();
+            }
         }
     }
 }
