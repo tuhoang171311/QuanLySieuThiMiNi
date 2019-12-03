@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.SF008 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.SF007 = new DevExpress.XtraBars.Navigation.NavigationPage();
@@ -84,11 +83,6 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SF002 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.cbMaHD2 = new System.Windows.Forms.ComboBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.datagridviewCTHD = new System.Windows.Forms.DataGridView();
-            this.cbMaHD = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
             this.SF001 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnHienThiDanhSachSanPham = new System.Windows.Forms.Button();
@@ -120,7 +114,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.cbMaKhachHang = new System.Windows.Forms.ComboBox();
+            this.btnThemKhachHang = new System.Windows.Forms.Button();
             this.navigationPane1 = new DevExpress.XtraBars.Navigation.NavigationPane();
             this.qL_PhanQuyenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qL_NguoiDungBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -130,6 +125,12 @@
             this.qL_NhomNguoiDungTableAdapter = new DoAnSieuThiMinik.DataSet_QLSieuThiMiniTableAdapters.QL_NhomNguoiDungTableAdapter();
             this.qL_NguoiDungNhomNguoiDungDKTableAdapter = new DoAnSieuThiMinik.DataSet_QLSieuThiMiniTableAdapters.QL_NguoiDungNhomNguoiDungDKTableAdapter();
             this.qL_GetPhanQuyenTableAdapter = new DoAnSieuThiMinik.DataSet_QLSieuThiMiniTableAdapters.QL_GetPhanQuyenTableAdapter();
+            this.label12 = new System.Windows.Forms.Label();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.SF005.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qL_GetPhanQuyenDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qL_GetPhanQuyenBindingSource)).BeginInit();
@@ -145,10 +146,6 @@
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDanhSachSP)).BeginInit();
             this.SF002.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridviewCTHD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbMaHD.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             this.SF001.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -158,12 +155,12 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
             this.navigationPane1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qL_PhanQuyenBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qL_NguoiDungBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dM_ManHinhBindingSource)).BeginInit();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // defaultLookAndFeel1
@@ -209,7 +206,7 @@
             // 
             this.button2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(276, 611);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(118, 45);
             this.button2.TabIndex = 11;
@@ -227,7 +224,7 @@
             this.dataGridViewCheckBoxColumn2});
             this.qL_GetPhanQuyenDataGridView.DataSource = this.qL_GetPhanQuyenBindingSource;
             this.qL_GetPhanQuyenDataGridView.Location = new System.Drawing.Point(429, 421);
-            this.qL_GetPhanQuyenDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.qL_GetPhanQuyenDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.qL_GetPhanQuyenDataGridView.Name = "qL_GetPhanQuyenDataGridView";
             this.qL_GetPhanQuyenDataGridView.Size = new System.Drawing.Size(516, 361);
             this.qL_GetPhanQuyenDataGridView.TabIndex = 10;
@@ -270,7 +267,7 @@
             this.dataGridViewTextBoxColumn4});
             this.qL_NguoiDungNhomNguoiDungDKDataGridView.DataSource = this.qL_NguoiDungNhomNguoiDungDKBindingSource;
             this.qL_NguoiDungNhomNguoiDungDKDataGridView.Location = new System.Drawing.Point(860, 4);
-            this.qL_NguoiDungNhomNguoiDungDKDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.qL_NguoiDungNhomNguoiDungDKDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.qL_NguoiDungNhomNguoiDungDKDataGridView.Name = "qL_NguoiDungNhomNguoiDungDKDataGridView";
             this.qL_NguoiDungNhomNguoiDungDKDataGridView.Size = new System.Drawing.Size(368, 408);
             this.qL_NguoiDungNhomNguoiDungDKDataGridView.TabIndex = 10;
@@ -302,7 +299,7 @@
             this.dataGridViewCheckBoxColumn1});
             this.qL_NguoiDungDataGridView.DataSource = this.qL_NguoiDungBindingSource1;
             this.qL_NguoiDungDataGridView.Location = new System.Drawing.Point(28, 4);
-            this.qL_NguoiDungDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.qL_NguoiDungDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.qL_NguoiDungDataGridView.Name = "qL_NguoiDungDataGridView";
             this.qL_NguoiDungDataGridView.Size = new System.Drawing.Size(514, 408);
             this.qL_NguoiDungDataGridView.TabIndex = 10;
@@ -334,7 +331,7 @@
             // 
             this.btnRaNhom.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRaNhom.Location = new System.Drawing.Point(648, 210);
-            this.btnRaNhom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRaNhom.Margin = new System.Windows.Forms.Padding(4);
             this.btnRaNhom.Name = "btnRaNhom";
             this.btnRaNhom.Size = new System.Drawing.Size(99, 34);
             this.btnRaNhom.TabIndex = 10;
@@ -346,7 +343,7 @@
             // 
             this.btnVaoNhom.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVaoNhom.Location = new System.Drawing.Point(648, 168);
-            this.btnVaoNhom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVaoNhom.Margin = new System.Windows.Forms.Padding(4);
             this.btnVaoNhom.Name = "btnVaoNhom";
             this.btnVaoNhom.Size = new System.Drawing.Size(99, 34);
             this.btnVaoNhom.TabIndex = 9;
@@ -360,7 +357,7 @@
             this.qL_NhomNguoiDungComboBox.DisplayMember = "TenNhom";
             this.qL_NhomNguoiDungComboBox.FormattingEnabled = true;
             this.qL_NhomNguoiDungComboBox.Location = new System.Drawing.Point(566, 7);
-            this.qL_NhomNguoiDungComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.qL_NhomNguoiDungComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.qL_NhomNguoiDungComboBox.Name = "qL_NhomNguoiDungComboBox";
             this.qL_NhomNguoiDungComboBox.Size = new System.Drawing.Size(270, 27);
             this.qL_NhomNguoiDungComboBox.TabIndex = 8;
@@ -385,7 +382,7 @@
             this.SF004.Caption = "Báo Cáo";
             this.SF004.Image = ((System.Drawing.Image)(resources.GetObject("SF004.Image")));
             this.SF004.Name = "SF004";
-            this.SF004.Size = new System.Drawing.Size(1407, 969);
+            this.SF004.Size = new System.Drawing.Size(1334, 750);
             // 
             // SF003
             // 
@@ -524,7 +521,7 @@
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(76, 29);
+            this.btnThem.Size = new System.Drawing.Size(88, 34);
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -533,7 +530,7 @@
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(63, 29);
+            this.btnXoa.Size = new System.Drawing.Size(70, 34);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -542,7 +539,7 @@
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(62, 29);
+            this.btnSua.Size = new System.Drawing.Size(69, 34);
             this.btnSua.Text = "Sửa";
             // 
             // btnDong
@@ -550,7 +547,7 @@
             this.btnDong.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.Image")));
             this.btnDong.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(77, 29);
+            this.btnDong.Size = new System.Drawing.Size(86, 34);
             this.btnDong.Text = "Đóng";
             // 
             // dataGridViewDanhSachSP
@@ -619,60 +616,12 @@
             // SF002
             // 
             this.SF002.Caption = "Tra Cứu Đơn Hàng";
-            this.SF002.Controls.Add(this.cbMaHD2);
-            this.SF002.Controls.Add(this.panel3);
-            this.SF002.Controls.Add(this.cbMaHD);
-            this.SF002.Controls.Add(this.buttonEdit1);
+            this.SF002.Controls.Add(this.label12);
+            this.SF002.Controls.Add(this.toolStrip2);
             this.SF002.ImageUri.Uri = "Preview";
             this.SF002.Name = "SF002";
-            this.SF002.Size = new System.Drawing.Size(1378, 767);
+            this.SF002.Size = new System.Drawing.Size(1334, 750);
             this.SF002.Paint += new System.Windows.Forms.PaintEventHandler(this.SF002_Paint);
-            // 
-            // cbMaHD2
-            // 
-            this.cbMaHD2.FormattingEnabled = true;
-            this.cbMaHD2.Location = new System.Drawing.Point(21, 123);
-            this.cbMaHD2.Name = "cbMaHD2";
-            this.cbMaHD2.Size = new System.Drawing.Size(248, 27);
-            this.cbMaHD2.TabIndex = 3;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.datagridviewCTHD);
-            this.panel3.Location = new System.Drawing.Point(340, 211);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1041, 741);
-            this.panel3.TabIndex = 2;
-            // 
-            // datagridviewCTHD
-            // 
-            this.datagridviewCTHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridviewCTHD.Location = new System.Drawing.Point(17, 21);
-            this.datagridviewCTHD.Name = "datagridviewCTHD";
-            this.datagridviewCTHD.RowTemplate.Height = 28;
-            this.datagridviewCTHD.Size = new System.Drawing.Size(979, 156);
-            this.datagridviewCTHD.TabIndex = 0;
-            // 
-            // cbMaHD
-            // 
-            this.cbMaHD.Location = new System.Drawing.Point(21, 79);
-            this.cbMaHD.Name = "cbMaHD";
-            this.cbMaHD.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbMaHD.Size = new System.Drawing.Size(248, 26);
-            this.cbMaHD.TabIndex = 1;
-            // 
-            // buttonEdit1
-            // 
-            this.buttonEdit1.EditValue = "";
-            this.buttonEdit1.Location = new System.Drawing.Point(21, 18);
-            this.buttonEdit1.Name = "buttonEdit1";
-            this.buttonEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.buttonEdit1.Properties.Appearance.Options.UseFont = true;
-            this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("buttonEdit1.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
-            this.buttonEdit1.Size = new System.Drawing.Size(248, 30);
-            this.buttonEdit1.TabIndex = 0;
             // 
             // SF001
             // 
@@ -683,7 +632,7 @@
             this.SF001.Controls.Add(this.panelControl1);
             this.SF001.ImageUri.Uri = "Currency";
             this.SF001.Name = "SF001";
-            this.SF001.Size = new System.Drawing.Size(1378, 767);
+            this.SF001.Size = new System.Drawing.Size(1334, 750);
             // 
             // panel2
             // 
@@ -691,16 +640,16 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 82);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1070, 622);
+            this.panel2.Size = new System.Drawing.Size(1026, 605);
             this.panel2.TabIndex = 12;
             // 
             // btnHienThiDanhSachSanPham
             // 
             this.btnHienThiDanhSachSanPham.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnHienThiDanhSachSanPham.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.btnHienThiDanhSachSanPham.Location = new System.Drawing.Point(0, 584);
+            this.btnHienThiDanhSachSanPham.Location = new System.Drawing.Point(0, 567);
             this.btnHienThiDanhSachSanPham.Name = "btnHienThiDanhSachSanPham";
-            this.btnHienThiDanhSachSanPham.Size = new System.Drawing.Size(1070, 38);
+            this.btnHienThiDanhSachSanPham.Size = new System.Drawing.Size(1026, 38);
             this.btnHienThiDanhSachSanPham.TabIndex = 9;
             this.btnHienThiDanhSachSanPham.Text = "Hiển thị danh sách sản phẩm";
             this.btnHienThiDanhSachSanPham.UseVisualStyleBackColor = true;
@@ -709,9 +658,9 @@
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 704);
+            this.panel1.Location = new System.Drawing.Point(0, 687);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1070, 63);
+            this.panel1.Size = new System.Drawing.Size(1026, 63);
             this.panel1.TabIndex = 11;
             // 
             // panelControl2
@@ -723,7 +672,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1070, 82);
+            this.panelControl2.Size = new System.Drawing.Size(1026, 82);
             this.panelControl2.TabIndex = 10;
             // 
             // label6
@@ -789,9 +738,9 @@
             this.panelControl1.Controls.Add(this.groupBox2);
             this.panelControl1.Controls.Add(this.groupBox1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl1.Location = new System.Drawing.Point(1070, 0);
+            this.panelControl1.Location = new System.Drawing.Point(1026, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(308, 767);
+            this.panelControl1.Size = new System.Drawing.Size(308, 750);
             this.panelControl1.TabIndex = 9;
             // 
             // button1
@@ -949,9 +898,9 @@
             // 
             this.groupBox2.Controls.Add(this.textEdit2);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(2, 101);
+            this.groupBox2.Location = new System.Drawing.Point(3, 102);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(303, 92);
+            this.groupBox2.Size = new System.Drawing.Size(302, 92);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tiền Mặt";
@@ -960,28 +909,38 @@
             // 
             this.textEdit2.Location = new System.Drawing.Point(26, 42);
             this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(256, 26);
+            this.textEdit2.Size = new System.Drawing.Size(198, 26);
             this.textEdit2.TabIndex = 0;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textEdit1);
+            this.groupBox1.Controls.Add(this.cbMaKhachHang);
+            this.groupBox1.Controls.Add(this.btnThemKhachHang);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(303, 99);
+            this.groupBox1.Size = new System.Drawing.Size(302, 99);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Khách Hàng";
             // 
-            // textEdit1
+            // cbMaKhachHang
             // 
-            this.textEdit1.Location = new System.Drawing.Point(26, 50);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Size = new System.Drawing.Size(256, 30);
-            this.textEdit1.TabIndex = 0;
+            this.cbMaKhachHang.FormattingEnabled = true;
+            this.cbMaKhachHang.Location = new System.Drawing.Point(26, 53);
+            this.cbMaKhachHang.Name = "cbMaKhachHang";
+            this.cbMaKhachHang.Size = new System.Drawing.Size(198, 27);
+            this.cbMaKhachHang.TabIndex = 2;
+            // 
+            // btnThemKhachHang
+            // 
+            this.btnThemKhachHang.Location = new System.Drawing.Point(230, 53);
+            this.btnThemKhachHang.Name = "btnThemKhachHang";
+            this.btnThemKhachHang.Size = new System.Drawing.Size(45, 27);
+            this.btnThemKhachHang.TabIndex = 1;
+            this.btnThemKhachHang.Text = "button3";
+            this.btnThemKhachHang.UseVisualStyleBackColor = true;
+            this.btnThemKhachHang.Click += new System.EventHandler(this.btnThemKhachHang_Click);
             // 
             // navigationPane1
             // 
@@ -1040,13 +999,71 @@
             // 
             this.qL_GetPhanQuyenTableAdapter.ClearBeforeFill = true;
             // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(0, 37);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(1334, 50);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "Tra Cứu Đơn Hàng";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripButton3,
+            this.toolStripButton4});
+            this.toolStrip2.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(1334, 37);
+            this.toolStrip2.TabIndex = 8;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(88, 34);
+            this.toolStripButton1.Text = "Thêm";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(70, 34);
+            this.toolStripButton2.Text = "Xóa";
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(69, 34);
+            this.toolStripButton3.Text = "Sửa";
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(86, 34);
+            this.toolStripButton4.Text = "Đóng";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1574, 831);
             this.Controls.Add(this.navigationPane1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Siêu Thị Mini";
@@ -1068,10 +1085,7 @@
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDanhSachSP)).EndInit();
             this.SF002.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.datagridviewCTHD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbMaHD.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
+            this.SF002.PerformLayout();
             this.SF001.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -1083,12 +1097,13 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).EndInit();
             this.navigationPane1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.qL_PhanQuyenBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qL_NguoiDungBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dM_ManHinhBindingSource)).EndInit();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1133,7 +1148,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraBars.Navigation.NavigationPane navigationPane1;
         
         private System.Windows.Forms.BindingSource qL_NguoiDungBindingSource;
@@ -1170,11 +1184,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         private System.Windows.Forms.Button button2;
-        private DevExpress.XtraEditors.ButtonEdit buttonEdit1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView datagridviewCTHD;
-        private DevExpress.XtraEditors.ComboBoxEdit cbMaHD;
-        private System.Windows.Forms.ComboBox cbMaHD2;
         private System.Windows.Forms.Button btnHienThiDanhSachSanPham;
         private System.Windows.Forms.DataGridView dataGridViewDanhSachSP;
         private System.Windows.Forms.ComboBox cbMaNSX;
@@ -1199,6 +1208,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Button btnThemKhachHang;
+        private System.Windows.Forms.ComboBox cbMaKhachHang;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
         
 
     }

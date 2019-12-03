@@ -28,3 +28,4 @@ D:\DoAnWinForm\QuanLySieuThiMiNi\DoAnSieuThiMinik\DoAnSieuThiMinik\obj\Debug\DoA
 D:\DoAnWinForm\QuanLySieuThiMiNi\DoAnSieuThiMinik\DoAnSieuThiMinik\obj\Debug\DoAnSieuThiMinik.Properties.Resources.resources
 D:\DoAnWinForm\QuanLySieuThiMiNi\DoAnSieuThiMinik\DoAnSieuThiMinik\obj\Debug\DoAnSieuThiMinik.csproj.GenerateResource.Cache
 D:\DoAnWinForm\QuanLySieuThiMiNi\DoAnSieuThiMinik\DoAnSieuThiMinik\obj\Debug\DoAnSieuThiMinik.exe.licenses
+D:\DoAnWinForm\QuanLySieuThiMiNi\DoAnSieuThiMinik\DoAnSieuThiMinik\obj\Debug\DoAnSieuThiMinik.frmKhachHang.resources

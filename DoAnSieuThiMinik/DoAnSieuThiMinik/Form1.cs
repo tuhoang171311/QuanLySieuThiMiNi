@@ -17,6 +17,7 @@ namespace DoAnSieuThiMinik
         ADO ado = new ADO();
         String _TenDangNhap;
         HANGHOA_DAL hh = new HANGHOA_DAL();
+        KHACHHANG_DAL kh = new KHACHHANG_DAL();
         
         
         public Form1(String txtUsername)
@@ -107,10 +108,10 @@ namespace DoAnSieuThiMinik
                         item.PageVisible = true;
 
             }
-            cbMaHD2.DataSource = sieuthi.getMaHD();
+           // cbMaHD2.DataSource = sieuthi.getMaHD();
           //  datagridviewCTHD.DataSource = sieuthi.GETCTHData();
           //  datagridviewCTHD.DataSource = sieuthi.getDataCTHD2();
-           datagridviewCTHD.DataSource = ado.getChiTietHoaDonData();
+          // datagridviewCTHD.DataSource = ado.getChiTietHoaDonData();
            dataGridViewDanhSachSP.DataSource = hh.getAllDataHangHoa();
            cbMaLoai.DataSource = hh.getCBLoaiHang();
            cbMaLoai.DisplayMember = "TenLoai";
@@ -118,6 +119,9 @@ namespace DoAnSieuThiMinik
            cbMaNSX.DataSource = hh.getCBNhaSX();
            cbMaNSX.DisplayMember = "TenNSX";
            cbMaNSX.ValueMember = "MaNSX";
+           cbMaKhachHang.DataSource = kh.getAllDataKhachHang();
+           cbMaKhachHang.DisplayMember = "HoTen";
+           cbMaKhachHang.ValueMember = "MaKH";
 
            ThemDuLieuDVT();
             
@@ -426,6 +430,12 @@ namespace DoAnSieuThiMinik
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void btnThemKhachHang_Click(object sender, EventArgs e)
+        {
+            frmKhachHang th = new frmKhachHang();
+            th.ShowDialog();
         }
     }
 }
